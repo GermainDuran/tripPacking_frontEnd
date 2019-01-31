@@ -3,7 +3,7 @@
   font-family: 'Hammersmith One', sans-serif;
 }
 .move-card {
-  background-image: url("/images/move_card_bg_img.jpg");
+  background-image: url("https://media.giphy.com/media/OfKPxZoeeEHF6/giphy.gif");
   background-size: 100%;
   background-repeat: no-repeat;
   opacity: 1;
@@ -36,7 +36,7 @@
  .see-boxes-btn {
 
   color: #ec407a;
-  /* font-family: 'Karla', sans-serif; */
+  font-family: 'Karla', sans-serif;
 }
 
 .see-boxes-btn-text {

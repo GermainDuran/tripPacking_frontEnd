@@ -35,7 +35,7 @@ import { addTrip } from '../actions/tripActions';
               <input onChange={this.handleChange} value={this.state.tripDate} name="tripDate"  id="trip_date" type="date" autoComplete="off"/>
               <label htmlFor="move_date">Traveling on...</label>
               <div className="submit-btn">
-              <button type="submit" className="col s1 btn-small cyan lighten-2"> Add</button>
+              <button type="submit" className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small" > Add</button>
             </div>
           </div>
           </form>
