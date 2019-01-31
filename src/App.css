@@ -1,3 +1,48 @@
+.card {
+  /* font-family: 'Karla', sans-serif; */
+  font-family: 'Hammersmith One', sans-serif;
+}
+.move-card {
+  background-image: url("/images/move_card_bg_img.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 1;
+  right: 0px;
+}
+
+#move-cont-title {
+  font-family: 'Hammersmith One', sans-serif;
+}
+ .card-title {
+  padding-top: 90px;
+}
+
+.delete-move-btn {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+
+/* .submit-btn {
+  padding-top: 27px;
+}
+
+ .new-move-form {
+  display: block;
+  padding-left: 260px;
+} */
+
+ .see-boxes-btn {
+
+  color: #ec407a;
+  /* font-family: 'Karla', sans-serif; */
+}
+
+.see-boxes-btn-text {
+    font-family: 'Hammersmith One', sans-serif;
+}
+
 .App {
   text-align: center;
 }
