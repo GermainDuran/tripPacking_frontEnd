@@ -12,7 +12,7 @@ import thunk from 'redux-thunk';
 // Create the Redux store:
 const store = createStore(rootReducer, applyMiddleware(thunk))
 // Wrap App with Provider
-
+// console.log("REDUX STORE IS", store);
 ReactDOM.render(
   <Provider store={store}>
      <App />

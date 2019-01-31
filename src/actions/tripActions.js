@@ -33,7 +33,7 @@ export function addTrip(name, date, userId) {
 
 
 
-// Delete a Move
+// Delete a Trip
 // ENDPOINT: http://localhost:3000/api/v1/users/9/trips/9
 export function deleteTrip(userId, tripId) {
   return(dispatch) => {
@@ -47,6 +47,40 @@ export function deleteTrip(userId, tripId) {
       // })
   }
 }
+
+// SELECT MOVE TO EDIT:
+export function selectTrip(trip) {
+  return {
+    type: "SELECT_TRIP",
+    payload: trip
+  }
+}
+
+ // PREFILL EDIT FORM:
+export function prefillForm(trip) {
+  return {
+    type: "PREFILL_FORM"
+  }
+}
+
+export function editTrip(name, date, userId, tripId) {
+  return(dispatch) => {
+    	fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        date: date
+      })
+    })
+      .then(response => response.json())
+      .then(editedTrip => {
+        // debugger
+        return dispatch({type: 'EDIT_TRIP', payload: editedTrip })
+      })
+  }
+}
+
 
 // Just trying to fetch Trips!
 // export function fetchTripsAction() {

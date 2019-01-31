@@ -10,8 +10,23 @@
   right: 0px;
 }
 
+edit-move-btn {
+  position: absolute;
+  bottom: 0px;
+  right: 37px;
+}
+
+.small-actions {
+  margin-left: 155px;
+  margin-bottom: 25px;
+}
+
 #move-cont-title {
   font-family: 'Hammersmith One', sans-serif;
+}
+
+div#editor {
+   display: none;
 }
  .card-title {
   padding-top: 90px;
