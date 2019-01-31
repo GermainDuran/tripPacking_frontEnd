@@ -3,20 +3,24 @@ import { connect } from 'react-redux';
 import { deleteTrip } from '../actions/tripActions'
 import { selectTrip } from '../actions/tripActions'
 import { prefillForm } from '../actions/tripActions';
+import { withRouter } from 'react-router-dom'
 
  class Trip extends React.Component {
-
-   state = {
+  constructor(props) {
+  super(props)
+   this.state = {
      name: this.props.trip.name,
      date: this.props.trip.date
    }
-
+  }
   static getDerivedStateFromProps(props, state) {
     if (props.trip.name !== state.name || props.trip.date !== state.date) {
       return ({
         name: props.trip.name,
         date: props.trip.date
       })
+    }else {
+      return null
     }
   }
 
@@ -60,7 +64,11 @@ import { prefillForm } from '../actions/tripActions';
               {this.reformatDate(this.state.date)}
           </div>
         <div className="see-boxes-btn">
-          <button className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small">See Suitcases</button>
+          <button onClick={() => this.props.history.push('/suitcases')} className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small">
+
+                See Suitcases
+
+          </button>
         </div>
         <button onClick={this.handleDelete} className="delete-move-btn btn-floating btn-small waves-effect red accent-3">
          <span style={{fontFamily: 'Hammersmith One'}}>X</span>
@@ -77,7 +85,7 @@ import { prefillForm } from '../actions/tripActions';
 function mapStateToProps(state) {
   return {
     userId: state.user.user_id,
-    selectTrip: state.trip
+  //  selectTrip: state.trip
   }
 }
 
@@ -89,5 +97,6 @@ function mapStateToProps(state) {
   }
 }
 
- export default connect(mapStateToProps, mapDispatchToProps)(Trip);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Trip));
+ // export default connect(mapStateToProps, mapDispatchToProps)(Trip);
  //export default Trip;

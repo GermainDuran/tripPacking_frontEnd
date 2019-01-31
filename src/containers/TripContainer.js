@@ -3,7 +3,7 @@ import React from 'react';
 // import { getTrips } from '../actions/tripActions'
 import TripList from '../components/TripList'
 import NewTripForm from '../components/NewTripForm'
-
+import { withRouter } from 'react-router-dom'
 //const tripsIndex = `http://localhost:3000/api/v1/trips/`
 class TripContainer extends React.Component {
 
@@ -22,7 +22,7 @@ class TripContainer extends React.Component {
      console.log("TripContainer props:", this.props);
     return (
       <div className="container">
-       <h2 id="move-cont-title" className="card-panel white black-text">My Trips</h2>
+       <h2 className="card-panel white black-text cont-title">My Trips</h2>
         <NewTripForm />
         <TripList />
       </div>
@@ -44,5 +44,5 @@ class TripContainer extends React.Component {
 //   }
 // }
 
-
-export default TripContainer;
+export default withRouter(TripContainer);
+//export default TripContainer;

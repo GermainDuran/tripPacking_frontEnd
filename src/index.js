@@ -7,7 +7,9 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/rootReducer'
 import thunk from 'redux-thunk';
-//import {BrowserRouter as Router} from 'react-router-dom'
+// esta linea es para cuando comienzo utilizar react-router por eso tengo que importarlo
+// y luego utilizo router en el render y en el medio app
+import {BrowserRouter as Router} from 'react-router-dom'
 
 // Create the Redux store:
 const store = createStore(rootReducer, applyMiddleware(thunk))
@@ -15,7 +17,9 @@ const store = createStore(rootReducer, applyMiddleware(thunk))
 // console.log("REDUX STORE IS", store);
 ReactDOM.render(
   <Provider store={store}>
+  <Router>
      <App />
+  </Router>
   </Provider>
  ,
   document.getElementById('root'));

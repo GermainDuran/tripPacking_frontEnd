@@ -2,7 +2,10 @@ import { combineReducers } from 'redux';
 import tripsReducer from './tripsReducer'
 import userReducer from './userReducer'
 import singleTripReducer from './singleTripReducer'
-const rootReducer = combineReducers({ trips: tripsReducer, user: userReducer, trip: singleTripReducer })
+import suitcasesReducer from './suitcasesReducer'
+
+
+const rootReducer = combineReducers({ trips: tripsReducer, user: userReducer, trip: singleTripReducer, suitcases: suitcasesReducer })
 
 
 

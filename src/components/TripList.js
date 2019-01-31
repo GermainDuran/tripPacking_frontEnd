@@ -3,13 +3,16 @@ import { connect } from 'react-redux';
 // connect this one to redux and make class component!!!!!
 import { getTrips } from '../actions/tripActions'
 import Trip from './Trip'
+import { withRouter } from 'react-router-dom'
 
 
 class TripList extends React.Component {
 
   componentDidMount() {
     //console.log("Venezuela",this.props.user.user_id)
+  if (this.props.history.action === "POP") {
     this.props.getTrips(this.props.user.user_id)
+  }
   }
 
   render() {
@@ -45,4 +48,5 @@ class TripList extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TripList);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TripList));
+// export default connect(mapStateToProps, mapDispatchToProps)(TripList);

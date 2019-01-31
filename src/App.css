@@ -21,7 +21,7 @@ edit-move-btn {
   margin-bottom: 25px;
 }
 
-#move-cont-title {
+.cont-title {
   font-family: 'Hammersmith One', sans-serif;
 }
 
@@ -38,6 +38,11 @@ div#editor {
   right: 0px;
 }
 
+.nav-btn {
+  /* margin-left: 10px; */
+  margin: 2px;
+  margin-right: 5px;
+}
 
 /* .submit-btn {
   padding-top: 27px;
