@@ -4,7 +4,7 @@ const initialState = []
 
    switch (action.type) {
     case "GET_SUITCASES":
-      return [...state, ...action.payload]
+      return [...action.payload]
 
      default:
       return state;

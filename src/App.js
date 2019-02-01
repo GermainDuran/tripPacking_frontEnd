@@ -30,7 +30,7 @@ class App extends Component {
         <NavBar />
         <Switch>
           <Route exact path="/trips" component={TripContainer} />
-          <Route path="/users/:userId/trips/:tripId/suitcases" render={() => <TripContainer />} />
+          <Route path="/users/:userId/trips/:tripId/suitcases" render={() => <SuitcaseContainer />} />
         </Switch>
       </div>
     </Fragment>

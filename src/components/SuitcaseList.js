@@ -12,9 +12,9 @@ import Suitcase from './Suitcase'
     // if (this.props.history.action === "PUSH") {
     //   this.props.getSuitcases(this.props.user.user_id, this.props.trip.id)
     // }
-    // const { tripId, userId } = this.props.match.params
-    //  this.props.getSuitcases(userId, tripId)
-      this.props.getSuitcases(this.props.user.user_id, this.props.trip.id)
+    const { tripId, userId } = this.props.match.params
+    this.props.getSuitcases(userId, tripId)
+  //    this.props.getSuitcases(this.props.user.user_id, this.props.trip.id)
 
    }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import SuitcaseList from '../components/SuitcaseList'
-//import SuitcasesSideBar from '../components/SuitcasesSideBar'
+import SuitcasesSideBar from '../components/SuitcasesSideBar'
 import BelongingsSideBar from '../components/BelongingsSideBar'
 
  const SuitcaseContainer = props => {
