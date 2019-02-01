@@ -1,6 +1,7 @@
 .card {
   /* font-family: 'Karla', sans-serif; */
   font-family: 'Hammersmith One', sans-serif;
+   align-content: center;
 }
 .move-card {
   background-image: url("https://media.giphy.com/media/OfKPxZoeeEHF6/giphy.gif");
@@ -10,7 +11,7 @@
   right: 0px;
 }
 
-edit-move-btn {
+.edit-move-btn {
   position: absolute;
   bottom: 0px;
   right: 37px;

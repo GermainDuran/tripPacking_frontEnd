@@ -5,7 +5,6 @@ import { prefillForm } from '../actions/tripActions';
 import { editTrip } from '../actions/tripActions';
 
 
-
  class NewTripForm extends React.Component {
 
    state = {
@@ -51,7 +50,7 @@ import { editTrip } from '../actions/tripActions';
         tripName: this.props.selectedTrip.name,
         tripDate: this.props.selectedTrip.date,
         editing: !this.state.editing
-      }, () => console.log("componentDidUpdate", this.state))
+      })
     }
   }
   render() {
@@ -59,8 +58,7 @@ import { editTrip } from '../actions/tripActions';
        <Fragment>
           <form onSubmit={this.handleSubmit} className="row">
             <div className="input-field col s6">
-              <input onChange={this.handleChange} value={this.state.tripName} name="tripName" placeholder="Trip Name" id="trip_name" type="text" autoComplete="off" required/>
-            <label htmlFor="move_name">Name Your Trip</label>
+              <input onChange={this.handleChange} placeholder="Trip name" value={this.state.tripName} name="tripName"  id="trip_name" type="text" autoComplete="off" required/>
           </div>
             <div className="input-field col s6">
               <input onChange={this.handleChange} value={this.state.tripDate} name="tripDate"  id="trip_date" type="date" autoComplete="off"/>
@@ -79,7 +77,7 @@ function mapStateToProps(state) {
   console.log("state in NewTripForm", state);
   return {
     userId: state.user.user_id,
-    selectedTrip: state.trip
+    selectedTrip: state.selectedTrip
   }
 }
 

@@ -8,9 +8,10 @@ import { withRouter } from 'react-router-dom'
  class Trip extends React.Component {
   constructor(props) {
   super(props)
+   const { name, date } = this.props.trip // destructuring
    this.state = {
-     name: this.props.trip.name,
-     date: this.props.trip.date
+     name: name,
+     date: date
    }
   }
   static getDerivedStateFromProps(props, state) {
@@ -78,10 +79,11 @@ import { withRouter } from 'react-router-dom'
         <div className="see-boxes-btn">
           <button onClick={this.handleClickToSeeSuitcases} className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small">
 
-                See Suitcases
+                 Suitcases
 
           </button>
         </div>
+        <div style={{align: 'center'}}>
         <button onClick={this.handleDelete} className="delete-move-btn btn-floating btn-small waves-effect red accent-3">
          <span style={{fontFamily: 'Hammersmith One'}}>X</span>
        </button>
@@ -90,6 +92,7 @@ import { withRouter } from 'react-router-dom'
        </button>
      </div>
    </div>
+  </div>
     )
   }
 }

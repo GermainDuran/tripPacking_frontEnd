@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
     return (
       <div>
         <h2 className="card-panel white black-text cont-title">
-          My Suitcases for {this.state.tripName}
+          My Suitcases for
         </h2>
       </div>
     )
@@ -21,7 +21,7 @@ import { connect } from 'react-redux';
 
  const mapStateToProps = state => {
   return {
-    tripName: state.trip.name,
+    tripName: state.selectedTrip.name,
   }
 }
 

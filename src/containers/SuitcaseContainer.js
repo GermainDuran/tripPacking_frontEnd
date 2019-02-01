@@ -1,8 +1,9 @@
 import React from 'react';
 import SuitcaseList from '../components/SuitcaseList'
-import SuitcasesSideBar from '../components/SuitcasesSideBar'
+//import SuitcasesSideBar from '../components/SuitcasesSideBar'
 import BelongingsSideBar from '../components/BelongingsSideBar'
 import SuitcasesCabeceras from '../components/SuitcasesCabeceras'
+import NewSuitcaseForm from '../components/NewSuitcaseForm'
 
 
  const SuitcaseContainer = props => {
@@ -14,6 +15,7 @@ import SuitcasesCabeceras from '../components/SuitcasesCabeceras'
         <SuitcaseList props={props}/>
         <BelongingsSideBar  props={props}/>
         <SuitcasesCabeceras />
+        <NewSuitcaseForm />
       </div>
 
      </div>
