@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom'
   // console.log("NAVBAR",props);
   handleClick = () => {
     // this.props.history.clear()
-    this.props.history.replace('/')
+    this.props.history.replace('/trips')
   }
 
 // const NavBar = () => {

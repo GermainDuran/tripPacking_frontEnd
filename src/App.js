@@ -29,8 +29,8 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <Switch>
-          <Route exact path="/" component={TripContainer} />
-          <Route path="/suitcases" component={TripContainer} />
+          <Route exact path="/trips" component={TripContainer} />
+          <Route path="/users/:userId/trips/:tripId/suitcases" render={() => <TripContainer />} />
         </Switch>
       </div>
     </Fragment>

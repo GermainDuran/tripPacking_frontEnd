@@ -3,9 +3,10 @@ import tripsReducer from './tripsReducer'
 import userReducer from './userReducer'
 import singleTripReducer from './singleTripReducer'
 import suitcasesReducer from './suitcasesReducer'
+import belongingsReducer from './belongingsReducer'
 
 
-const rootReducer = combineReducers({ trips: tripsReducer, user: userReducer, trip: singleTripReducer, suitcases: suitcasesReducer })
+const rootReducer = combineReducers({ trips: tripsReducer, user: userReducer, trip: singleTripReducer, suitcases: suitcasesReducer, tripBelongings: belongingsReducer  })
 
 
 

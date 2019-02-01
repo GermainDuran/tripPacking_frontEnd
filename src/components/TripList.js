@@ -10,9 +10,9 @@ class TripList extends React.Component {
 
   componentDidMount() {
     //console.log("Venezuela",this.props.user.user_id)
-  if (this.props.history.action === "POP") {
+  //if (this.props.history.action === "POP") {
     this.props.getTrips(this.props.user.user_id)
-  }
+  //}
   }
 
   render() {

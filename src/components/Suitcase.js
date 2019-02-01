@@ -4,9 +4,19 @@ import React from 'react';
  class Suitcase extends React.Component {
 
 
-   render() {
+render() {
+    console.log("suitcase props", this.props);
     return (
-      <div>Suitcase</div>
+      <div className="col s12 m4">
+        <div className="card small">
+        <p>Suitcase Number: {this.props.idx + 1} </p>
+          <span className="card-title">
+            "{this.props.suitcase.name}"
+
+          </span>
+        <p>Category: {this.props.suitcase.category}</p>
+        </div>
+      </div>
     )
   }
 }

@@ -3,7 +3,7 @@ const initialState = []
  const suitcasesReducer = (state=initialState, action) => {
 
    switch (action.type) {
-    case 'GET_SUITCASES':
+    case "GET_SUITCASES":
       return [...state, ...action.payload]
 
      default:
