@@ -9,9 +9,9 @@ render() {
     return (
       <div className="col s12 m4">
         <div className="card small">
-        <p>Suitcase Number: {this.props.idx + 1} </p>
+        <p>Suitcase Number: {this.props.suitcase.id} </p>
           <span className="card-title">
-            "{this.props.suitcase.name}"
+            {this.props.suitcase.name}
 
           </span>
         <p>Category: {this.props.suitcase.category}</p>

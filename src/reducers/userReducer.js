@@ -2,7 +2,7 @@
 
  const initialState = {
   username: '',
-  user_id: 10
+  user_id: 13
 }
 
  const userReducer = (state = initialState, action) => {

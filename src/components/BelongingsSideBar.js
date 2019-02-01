@@ -9,20 +9,22 @@ import { withRouter } from 'react-router-dom'
 
    componentDidMount() {
      const { tripId, userId } = this.props.match.params
+     // const userId = 12
+     // const tripId = 30
      this.props.getTripBelongings(userId, tripId)
     }
 
 
 
    render() {
-
-     const tripBelongings = this.props.tripBelongings.map((tripItem) => {
-     return <li key={tripItem.id}>{tripItem.name} -- Suitcase: {tripItem.suitcase_id}</li>
+      console.log("ItemsSideBar PROPS carla", this.props);
+     const tripBelongings = this.props.tripBelongings.map((tripBelongings) => {
+     return <li key={tripBelongings.id}>{tripBelongings.name} -- Suitcase:{tripBelongings.suitcase_id}</li>
    })
 
     return (
       <div className="col s3" style={{border: 'ridge #4dd0e1 3px', paddingTop: '5px', marginTop: '15px'}}>
-      <h5>ALL ITEMS ASSOCIATED W THIS MOVE</h5>
+      <h5>Belongings </h5>
             {tripBelongings}
       </div>
     )

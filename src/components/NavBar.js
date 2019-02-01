@@ -20,7 +20,7 @@ render() {
     return (
     <nav className="nav-wrapper white">
       <div className="container">
-        <span className="brand-logo" style={{color: 'black'}}>LOGO</span>
+        <span className="brand-logo" style={{color: 'black'}}>TripPacking by:Germain </span>
           <ul className="left hide-on-med-and-down">
             <li>
             <button className="nav-btn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
