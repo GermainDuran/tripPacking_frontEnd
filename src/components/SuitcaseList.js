@@ -20,9 +20,19 @@ import Suitcase from './Suitcase'
 
    render() {
     console.log("suitcaselist props", this.props);
-    const mappedSuitcases = this.props.suitcases.map((suitcase,idx) => {
-    return <Suitcase suitcase={suitcase} key={suitcase.id} idx={idx}/>
-  })
+  //   const mappedSuitcases = this.props.suitcases.map((suitcase,idx) => {
+  //   return <Suitcase suitcase={suitcase} key={suitcase.id} idx={idx}/>
+  // })
+
+
+     const filteredSuitcases = this.props.suitcases.filter((suitcase) => {
+      return this.props.belongingSuitcaseIds.includes(suitcase.id)
+    })
+
+     const mappedSuitcases = filteredSuitcases.map((suitcase, idx) => {
+      return <Suitcase suitcase={suitcase} key={suitcase.id} idx={idx}/>
+    })
+
 
     return (
       <div className="col s9">
@@ -35,9 +45,9 @@ import Suitcase from './Suitcase'
  const mapStateToProps = state => {
   // debugger
   return {
-    trip: state.trip,
+  //  trip: state.trip,
     suitcases: state.suitcases,
-    user: state.user
+  //  user: state.user
   }
 }
 

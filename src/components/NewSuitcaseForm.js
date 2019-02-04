@@ -22,7 +22,7 @@ import { withRouter } from 'react-router-dom'
     }
 
     handleChange = (event) => {
-     console.log(event.target.value);
+     //console.log(event.target.value);
      this.setState({
        [event.target.name]: event.target.value
      })
@@ -83,7 +83,7 @@ import { withRouter } from 'react-router-dom'
   }
 
 const mapDispatchToProps = dispatch => {
-  console.log("DISPATCH", dispatch);
+  //console.log("DISPATCH", dispatch);
   return {
     addSuitcase: (name, category, userId, tripId) => dispatch(addSuitcase(name, category, userId, tripId)),
     editSuitcase: (name, category, userId, tripId, suitcaseId) => dispatch(editSuitcase(name, category, userId, tripId, suitcaseId))

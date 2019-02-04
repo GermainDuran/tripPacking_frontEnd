@@ -7,7 +7,7 @@ import belongingsReducer from './belongingsReducer'
 import singleSuitcaseReducer from './singleSuitcaseReducer'
 
 
-const rootReducer = combineReducers({ trips: tripsReducer, user: userReducer, selectedTrip: singleTripReducer, suitcases: suitcasesReducer,selectedSuitcase: singleSuitcaseReducer, tripBelongings: belongingsReducer  })
+const rootReducer = combineReducers({ trips: tripsReducer, user: userReducer, selectedTrip: singleTripReducer, suitcases: suitcasesReducer,selectedSuitcase: singleSuitcaseReducer, belongings: belongingsReducer  })
 
 
 

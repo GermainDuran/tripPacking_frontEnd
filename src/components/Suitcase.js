@@ -18,7 +18,8 @@ import { deleteSuitcase, selectSuitcase, prefillForm } from '../actions/suitcase
      }
 
       static getDerivedStateFromProps(props, state) {
-       if (props.suitcase.name !== state.name || props.suitcase.category !== state.category) {
+       if (props.suitcase.name !== state.name || props.suitcase.category !== state.category || props.suitcase.idx !== state.idx) {
+
          return ({
            name: props.suitcase.name,
            category: props.suitcase.category,
@@ -39,29 +40,41 @@ import { deleteSuitcase, selectSuitcase, prefillForm } from '../actions/suitcase
    this.props.selectSuitcase(this.props.suitcase)
    this.props.prefillForm(this.props.suitcase)
  }
+ handleClickToSeeBelongings= () => {
+   // console.log("trying to see items");
+   const { userId, tripId } = this.props.match.params
+    this.props.history.push(`/users/${userId}/trips/${tripId}/suitcases/${this.props.suitcase.id}/belongings`)
 
+ }
 
 render() {
     console.log("suitcase props", this.props);
     return (
-      <div className="col s12 m4">
-        <div className="card small">
-        <p>Suitcase: {this.props.suitcase.id} </p>
+      <div className="col s12 m5">
+      <div className="card small box-card">
+        <p style={{fontSize: '20px'}}> Suitcase: {this.props.suitcase.id} </p>
           <span className="card-title">
             {this.state.name}
-
           </span>
         <p>Category: {this.state.category}</p>
         <div style={{align: 'center'}}>
+          <div className="see-items-btn">
+            <button onClick={this.handleClickToSeeBelongings} className="see-items-btn-text waves-effect cyan lighten-2 btn-small">
+              See Belongings
+            </button>
+          </div>
+          <button onClick={this.handleClickToEdit} className="small-actions edit-move-btn btn-floating btn-small waves-effect cyan lighten-2">
+            <span style={{fontFamily: 'Hammersmith One'}}><i className="material-icons">edit</i></span>
+          </button>
           <button onClick={this.handleDelete} className="small-actions delete-move-btn btn-floating btn-small waves-effect cyan darken-2">
             <span style={{fontFamily: 'Hammersmith One'}}>X</span>
           </button>
-          <button onClick={this.handleClickToEdit} className="small-actions edit-move-btn btn-floating btn-small waves-effect cyan lighten-2">
-          <span style={{fontFamily: 'Hammersmith One'}}><i className="material-icons">edit</i></span>
-        </button>
+
+
         </div>
         </div>
       </div>
+
     )
   }
 }

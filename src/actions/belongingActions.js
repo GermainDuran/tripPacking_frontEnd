@@ -10,3 +10,15 @@ export function getTripBelongings(userId, tripId) {
       })
   }
 }
+
+
+export function getSuitcaseBelongings(userId, tripId, suitcaseId) {
+  return(dispatch) => {
+    fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases/${suitcaseId}/belongings`)
+    .then(r => r.json())
+      .then(belongings => {
+        // debugger
+          return dispatch({type: 'GET_SUITCASE_BELONGINGS', payload: belongings})
+      })
+  }
+}

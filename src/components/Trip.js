@@ -56,7 +56,7 @@ import { withRouter } from 'react-router-dom'
        // this.props.selectTrip(this.props.trip)
        // this.props.history.push('/suitcases')
       const { id, user_id } = this.props.trip
-      this.props.selectTrip(this.props.trip)
+      //this.props.selectTrip(this.props.trip)
       this.props.history.push(`users/${user_id}/trips/${id}/suitcases`)
 
 

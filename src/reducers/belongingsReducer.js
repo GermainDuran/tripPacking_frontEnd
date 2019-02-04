@@ -6,8 +6,9 @@ const initialState = []
     case "GET_TRIP_BELONGINGS":
       // console.log("===========payload", action.payload)
       return [...action.payload]
-
-     default:
+    case "GET_SUITCASE_BELONGINGS":
+      return [...action.payload]
+    default:
       return state;
   }
 }
