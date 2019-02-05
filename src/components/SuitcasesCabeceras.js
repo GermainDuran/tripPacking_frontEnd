@@ -37,11 +37,11 @@ import { withRouter } from 'react-router-dom'
    render() {
     return (
       <div>
-        <h2 className="card-panel white black-text cont-title">
-          My Suitcases for <span id="my_boxes_header">
+        <h4 className="card-panel white black-text cont-title">
+          My Suitcases for: <span >
           {this.state.tripName} on {this.reformatDate(this.state.tripDate)}
           </span>
-        </h2>
+        </h4>
       </div>
     )
   }

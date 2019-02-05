@@ -65,8 +65,8 @@ import { withRouter } from 'react-router-dom'
          <div className="input-field col s6">
            <input onChange={this.handleChange} placeholder="Category" name="suitcaseCategory" id="suitcase_category" type="text" value={this.state.suitcaseCategory}  autoComplete="off" required/>
              <div className="submit-btn">
-              <button type="submit" className="addOrEditMoveBtn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
-                  {this.state.editing ? "Submit" : "Add"}
+              <button type="submit" className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
+                <i className="material-icons right">send</i>  {this.state.editing ? "Submit" : "Add Suitcase"}
               </button>
              </div>
           </div>

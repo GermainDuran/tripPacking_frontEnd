@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { composeWithDevTools } from 'redux-devtools-extension'
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
+
 import rootReducer from './reducers/rootReducer'
 import thunk from 'redux-thunk';
 // esta linea es para cuando comienzo utilizar react-router por eso tengo que importarlo
@@ -12,7 +14,7 @@ import thunk from 'redux-thunk';
 import {BrowserRouter as Router} from 'react-router-dom'
 
 // Create the Redux store:
-const store = createStore(rootReducer, applyMiddleware(thunk))
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 // Wrap App with Provider
 // console.log("REDUX STORE IS", store);
 ReactDOM.render(

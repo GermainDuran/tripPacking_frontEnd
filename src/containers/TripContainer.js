@@ -4,7 +4,8 @@ import React from 'react';
 import TripList from '../components/TripList'
 import NewTripForm from '../components/NewTripForm'
 import { withRouter } from 'react-router-dom'
-//const tripsIndex = `http://localhost:3000/api/v1/trips/`
+//import withAuth from '../HOCs/withAuth'
+// import withAuth from '../HOCs/withAuth'
 class TripContainer extends React.Component {
 
 
@@ -19,7 +20,7 @@ class TripContainer extends React.Component {
 
    render() {
     //console.log("TripsContainer props:",this.props.getTrips);
-     console.log("TripContainer props:", this.props);
+     //console.log("TripContainer props:", this.props);
     return (
       <div className="container">
        <h2 className="card-panel white black-text cont-title">My Trips</h2>
@@ -43,6 +44,6 @@ class TripContainer extends React.Component {
 //      getTrips: () => dispatch(getTrips())
 //   }
 // }
-
 export default withRouter(TripContainer);
+// export default withRouter(TripContainer);
 //export default TripContainer;

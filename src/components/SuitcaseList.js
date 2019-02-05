@@ -1,36 +1,35 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom'
-import { connect } from 'react-redux';
-import { getSuitcases } from '../actions/suitcaseActions'
 import Suitcase from './Suitcase'
+import { withRouter } from 'react-router-dom'
 
- class SuitcaseList extends React.Component {
+// class SuitcaseList extends React.Component {
+
+const SuitcaseList = (props) => {
 
 
+  // componentDidMount() {
+  //   // if (this.props.history.action === "PUSH") {
+  //   //   this.props.getSuitcases(this.props.user.user_id, this.props.trip.id)
+  //   // }
+  //   const { tripId, userId } = this.props.match.params
+  //   this.props.getSuitcases(userId, tripId)
+  // //    this.props.getSuitcases(this.props.user.user_id, this.props.trip.id)
+  //
+  //  }
 
-  componentDidMount() {
-    // if (this.props.history.action === "PUSH") {
-    //   this.props.getSuitcases(this.props.user.user_id, this.props.trip.id)
-    // }
-    const { tripId, userId } = this.props.match.params
-    this.props.getSuitcases(userId, tripId)
-  //    this.props.getSuitcases(this.props.user.user_id, this.props.trip.id)
-
-   }
-
-   render() {
-    console.log("suitcaselist props", this.props);
+   // render() {
+  //  console.log("suitcaselist props", props);
   //   const mappedSuitcases = this.props.suitcases.map((suitcase,idx) => {
   //   return <Suitcase suitcase={suitcase} key={suitcase.id} idx={idx}/>
   // })
 
 
-     const filteredSuitcases = this.props.suitcases.filter((suitcase) => {
-      return this.props.belongingSuitcaseIds.includes(suitcase.id)
-    })
+    //  const filteredSuitcases = this.props.suitcases.filter((suitcase) => {
+    //   return this.props.belongingSuitcaseIds.includes(suitcase.id)
+    // })
 
-     const mappedSuitcases = filteredSuitcases.map((suitcase, idx) => {
-      return <Suitcase suitcase={suitcase} key={suitcase.id} idx={idx}/>
+     const mappedSuitcases = props.suitcases.map((suitcase) => {
+      return <Suitcase suitcase={suitcase} key={suitcase.id} />
     })
 
 
@@ -40,21 +39,21 @@ import Suitcase from './Suitcase'
       </div>
     )
   }
-}
 
- const mapStateToProps = state => {
-  // debugger
-  return {
-  //  trip: state.trip,
-    suitcases: state.suitcases,
-  //  user: state.user
-  }
-}
 
- const mapDispatchToProps = dispatch => {
-  return {
-    getSuitcases: (userId, tripId) => dispatch(getSuitcases(userId, tripId))
-  }
-}
+//  const mapStateToProps = state => {
+//   // debugger
+//   return {
+//   //  trip: state.trip,
+//     suitcases: state.suitcases,
+//   //  user: state.user
+//   }
+// }
+//
+//  const mapDispatchToProps = dispatch => {
+//   return {
+//     getSuitcases: (userId, tripId) => dispatch(getSuitcases(userId, tripId))
+//   }
+// }
 
- export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SuitcaseList))
+ export default withRouter(SuitcaseList)

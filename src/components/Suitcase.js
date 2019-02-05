@@ -1,24 +1,25 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { deleteSuitcase, selectSuitcase, prefillForm } from '../actions/suitcaseActions'
+// import { deleteSuitcase, selectSuitcase, prefillForm } from '../actions/suitcaseActions'
+import { deleteSuitcase, selectSuitcase } from '../actions/suitcaseActions'
 
  class Suitcase extends React.Component {
 
    constructor(props) {
        super(props)
 
-        const { name, category, idx } = this.props.suitcase // destructuring
+        const { name, category} = this.props.suitcase // destructuring
 
         this.state = {
          name: name,
          category: category,
-         idx: idx
+        // idx: idx
        }
      }
 
       static getDerivedStateFromProps(props, state) {
-       if (props.suitcase.name !== state.name || props.suitcase.category !== state.category || props.suitcase.idx !== state.idx) {
+       if (props.suitcase.name !== state.name || props.suitcase.category !== state.category ) {
 
          return ({
            name: props.suitcase.name,
@@ -36,9 +37,9 @@ import { deleteSuitcase, selectSuitcase, prefillForm } from '../actions/suitcase
   }
 
   handleClickToEdit = () => {
-   console.log('editing attempt');
+   //console.log('editing attempt');
    this.props.selectSuitcase(this.props.suitcase)
-   this.props.prefillForm(this.props.suitcase)
+   //this.props.prefillForm(this.props.suitcase)
  }
  handleClickToSeeBelongings= () => {
    // console.log("trying to see items");
@@ -48,32 +49,40 @@ import { deleteSuitcase, selectSuitcase, prefillForm } from '../actions/suitcase
  }
 
 render() {
-    console.log("suitcase props", this.props);
+    //console.log("suitcase props", this.props);
     return (
+
       <div className="col s12 m5">
       <div className="card small box-card">
-        <p style={{fontSize: '20px'}}> Suitcase: {this.props.suitcase.id} </p>
+        { /*  <p style={{fontSize: '20px'}}> Suitcase: {this.state.suitcase.id} </p> */}
           <span className="card-title">
-            {this.state.name}
+            <div>
+            <h5>{this.state.name.toUpperCase()}</h5>
+
+              Category: {this.state.category}
+            </div>
           </span>
-        <p>Category: {this.state.category}</p>
-        <div style={{align: 'center'}}>
+
+      {/*  <div style={{marginTop: '70px'}}>
+            <h5>Category: {this.state.category}</h5>
+        </div>*/}
+         <div style={{align: 'center', marginTop: '60px'}}>
           <div className="see-items-btn">
-            <button onClick={this.handleClickToSeeBelongings} className="see-items-btn-text waves-effect cyan lighten-2 btn-small">
-              See Belongings
+            <button onClick={this.handleClickToSeeBelongings} className="btn waves-effect waves-light">
+               Belongings
             </button>
           </div>
-          <button onClick={this.handleClickToEdit} className="small-actions edit-move-btn btn-floating btn-small waves-effect cyan lighten-2">
+
+          <button onClick={this.handleClickToEdit} className="small-actions edit-move-btn btn-floating btn-small waves-effect red accent-3">
             <span style={{fontFamily: 'Hammersmith One'}}><i className="material-icons">edit</i></span>
           </button>
-          <button onClick={this.handleDelete} className="small-actions delete-move-btn btn-floating btn-small waves-effect cyan darken-2">
+          <button onClick={this.handleDelete} className="small-actions delete-move-btn btn-floating btn-small waves-effect red accent-3">
             <span style={{fontFamily: 'Hammersmith One'}}>X</span>
           </button>
-
-
+            </div>
         </div>
         </div>
-      </div>
+
 
     )
   }
@@ -83,7 +92,7 @@ const mapDispatchToProps = dispatch => {
   return {
     deleteSuitcase: (userId, tripId, suitcaseId) => dispatch(deleteSuitcase(userId, tripId, suitcaseId)),
     selectSuitcase: (suitcase) => dispatch(selectSuitcase(suitcase)),
-    prefillForm: (suitcase) => dispatch(prefillForm(suitcase))
+  //  prefillForm: (suitcase) => dispatch(prefillForm(suitcase))
   }
 }
 

@@ -12,8 +12,8 @@ import { getSuitcaseBelongings} from '../actions/belongingActions'
     }
 
    render() {
-    const mappedBelongings = this.props.suitcaseBelongings.map((item) => {
-    return <Belonging belonging={item} key={item.id} />
+    const mappedBelongings = this.props.suitcaseBelongings.map((belonging) => {
+    return <Belonging belonging={belonging} key={belonging.id} />
     })
 
     return (

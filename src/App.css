@@ -5,12 +5,26 @@
 }
 
 .box-card {
-  background-image: url("https://lamaletadem.files.wordpress.com/2014/03/1115969_584864534937894_50185220_o.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background-image: url("http://www.robertstravel.com/wp-content/uploads/2017/12/GetImage-1-350x350.jpeg");
+  background-size: 120%;
+  /* background-repeat: no-repeat; */
   opacity: 1;
   /* background-position: 100%; */
 }
+
+.item-image {
+  display: block;
+  max-width:400px;
+  max-height:200px;
+  width: auto;
+  height: auto;
+  /* display: block; */
+  /* width: 100%; */
+  /* height: auto; */
+}
+
+
+
 
 #item_search_bar {
   position: relative;
@@ -26,7 +40,7 @@
   height: 15px;
 }
 .move-card {
-  background-image: url("https://media.giphy.com/media/OfKPxZoeeEHF6/giphy.gif");
+  background-image: url("https://thumbs.gfycat.com/CourageousDisgustingCoyote-size_restricted.gif");
   background-size: 100%;
   background-repeat: no-repeat;
   opacity: 1;
@@ -64,8 +78,8 @@ div#editor {
 }
 #side-bar {
   background-image: url("https://tse1.mm.bing.net/th?id=OIP.PblD2-B6nt_UpJKr8dG9ygHaE8&pid=Api");
-  background-size: 100%;
-  background-repeat: no-repeat;
+  /* background-size: 100%;
+  background-repeat: no-repeat; */
   opacity: 1;
 }
 .nav-btn {
@@ -79,6 +93,13 @@ div#editor {
   background-repeat: no-repeat;
   opacity: 1;
 }
+
+#login-parent {
+  position: relative;
+  left: 450px;
+  top: 200px;
+}
+
 
 #my_boxes_header{
   font-family: 'Hammersmith One', sans-serif;

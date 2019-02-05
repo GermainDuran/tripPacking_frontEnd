@@ -26,12 +26,11 @@ import { withRouter } from 'react-router-dom'
   }
 
    handleDelete = () => {
-     console.log("triggered handleClick");
      this.props.deleteTrip(this.props.userId, this.props.trip.id)
     }
 
    handleClickToEdit = () => {
-     console.log("triggered handleClickToEdit Venezuelaaa");
+     //console.log("triggered handleClickToEdit Venezuelaaa");
      this.props.selectTrip(this.props.trip)
      this.props.prefillForm(this.props.trip)
   }
@@ -55,32 +54,28 @@ import { withRouter } from 'react-router-dom'
     handleClickToSeeSuitcases = () => {
        // this.props.selectTrip(this.props.trip)
        // this.props.history.push('/suitcases')
-      const { id, user_id } = this.props.trip
+      const { id } = this.props.trip
       //this.props.selectTrip(this.props.trip)
-      this.props.history.push(`users/${user_id}/trips/${id}/suitcases`)
-
-
+      this.props.history.push(`trips/${id}/suitcases`)
 
      }
 
 
    render() {
-    console.log("trip props", this.props)
+    //console.log("trip props", this.props)
     return (
       <div className="col s12 m4">
        <div className="card small move-card">
-          <div className="card-content white-text">
+          <div className="card-content black-text">
             <span className="move_title card-title">
-            {this.state.name}
+            <h5>{this.state.name}</h5>
             </span>
             {/*<p>{this.props.trip.date}</p>*/}
-              {this.reformatDate(this.state.date)}
+            <h5>{this.reformatDate(this.state.date)}</h5>
           </div>
         <div className="see-boxes-btn">
-          <button onClick={this.handleClickToSeeSuitcases} className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small">
-
+          <button onClick={this.handleClickToSeeSuitcases} className="btn waves-effect waves-light">
                  Suitcases
-
           </button>
         </div>
         <div style={{align: 'center'}}>

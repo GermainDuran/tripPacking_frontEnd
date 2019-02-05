@@ -15,7 +15,7 @@ import { editTrip } from '../actions/tripActions';
      }
 
    handleChange = event => {
-      console.log("Lanzando handle change",event.target.value) //aqui cuando comienzo a escribir en la forma veo el mensaje en la consola
+    //  console.log("Lanzando handle change",event.target.value) //aqui cuando comienzo a escribir en la forma veo el mensaje en la consola
       this.setState({
       [event.target.name]: event.target.value
     })
@@ -23,7 +23,7 @@ import { editTrip } from '../actions/tripActions';
 
     handleSubmit = (event) => {
     event.preventDefault();
-    console.log("triggered submit");
+    //console.log("triggered submit");
     if (this.state.editing === false) { // CREATE MODE
       this.props.addTrip(this.state.tripName, this.state.tripDate, this.props.userId);
 
@@ -64,7 +64,7 @@ import { editTrip } from '../actions/tripActions';
               <input onChange={this.handleChange} value={this.state.tripDate} name="tripDate"  id="trip_date" type="date" autoComplete="off"/>
               <label htmlFor="move_date">Traveling on...</label>
               <div className="submit-btn">
-              <button type="submit" className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small" > {this.state.editing ? "Submit" : "Add"}</button>
+              <button type="submit" className="btn waves-effect waves-light " >  <i className="material-icons right">send</i> {this.state.editing ? "Submit" : "Add Trip"}</button>
             </div>
           </div>
           </form>
@@ -74,7 +74,7 @@ import { editTrip } from '../actions/tripActions';
 }
 
 function mapStateToProps(state) {
-  console.log("state in NewTripForm", state);
+//  console.log("state in NewTripForm", state);
   return {
     userId: state.user.user_id,
     selectedTrip: state.selectedTrip

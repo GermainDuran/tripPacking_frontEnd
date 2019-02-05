@@ -35,7 +35,7 @@ class TripList extends React.Component {
   // Retrieve the data from within the Redux Store:
 
  const mapStateToProps = (state) => {
-  console.log("props in triplist", state);
+  //console.log("props in triplist", state);
   return {
     trips: state.trips,
     user: state.user

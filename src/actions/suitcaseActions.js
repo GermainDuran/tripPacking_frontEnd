@@ -3,7 +3,7 @@ export function getSuitcases(userId, tripId) {
     fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases`)
       .then(r => r.json())
       .then(suitcases => {
-        console.log("Venezuela Bonita:",suitcases)
+        //console.log("Venezuela Bonita:",suitcases)
         return dispatch({type: 'GET_SUITCASES', payload: suitcases})
       })
   }
@@ -43,12 +43,12 @@ export function selectSuitcase(suitcase) {
   }
 }
 
-
-export function prefillForm(suitcase) {
-  return {
-    type: "PREFILL_FORM"
-  }
-}
+//
+// export function prefillForm(suitcase) {
+//   return {
+//     type: "PREFILL_FORM"
+//   }
+// }
 export function editSuitcase(name, category, userId, tripId, suitcaseId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases/${suitcaseId}`, {
@@ -61,7 +61,7 @@ export function editSuitcase(name, category, userId, tripId, suitcaseId) {
     })
       .then(r => r.json())
       .then(editedSuitcase => {
-        
+
         return dispatch({ type: "EDIT_SUITCASE", payload: editedSuitcase })
       })
   }

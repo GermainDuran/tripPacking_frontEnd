@@ -17,7 +17,7 @@ import { connect } from 'react-redux';
 
 
    render() {
-      console.log("BelongingSideBar PROPS carla", this.props);
+      //console.log("BelongingSideBar PROPS carla", this.props);
    //   const tripBelongings = this.props.tripBelongings.map((tripBelongings) => {
    //   return <li key={tripBelongings.id}>{tripBelongings.name} -- Suitcase:{tripBelongings.suitcase_id}</li>
    // })
@@ -28,17 +28,18 @@ import { connect } from 'react-redux';
 
      const tripBelongings = this.props.belongings.map((belonging) => {
       // let suitcase = this.props.suitcases.find((suitcase) => suitcase.id === belonging.suitcase_id)
-      let suitcase = this.props.suitcases.find((suitcase) => suitcase.id === belonging.suitcase_id)
-      let idx = this.props.suitcases.indexOf(suitcase)
+      // let suitcase = this.props.suitcases.find((suitcase) => suitcase.id === belonging.suitcase_id)
+      // let idx = this.props.suitcases.indexOf(suitcase)
 
-      return  <li className="item-li" key={belonging.id} style={{fontFamily: 'Josefin Sans', fontSize: '18px', color: 'black'}}>
-              {belonging.name}: <span style={{fontWeight: 'bold'}}> - Suitcase: {idx+1}</span></li>
+      return  <li className="item-li" key={belonging.id} style={{fontFamily: 'Hammersmith One, sans-serif', fontSize: '22px', color: 'black', marginBottom: '15px'}}>
+              {belonging.name}
+               {/*: <span style={{fontWeight: 'light'}}> - Suitcase: {idx +1}</span>*/}</li>
     })
 
       return (
-        <div  id="side-bar" className="col s3 z-depth-3" style={{border: 'ridge #4dd0e1 3px', marginTop: '15px', textAlign: 'center'}}>
+        <div  id="side-bar" className="col s3 z-depth-3" style={{border: 'ridge waves-light 3px', marginTop: '15px', textAlign: 'center'}}>
 
-        <h5 className="card title">Belongings </h5>
+        <h5 className="card title">Belongings: </h5>
             <div style={{textAlign: 'left'}}>
             {tripBelongings}
             </div>
