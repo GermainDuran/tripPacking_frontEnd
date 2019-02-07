@@ -2,7 +2,7 @@
 
  const initialState = {
   // username: '',
-  user_id: 14,
+  user_id: 1,
   // user: null,
   // loggedIn: false,
   // authenticatingUser: false,
