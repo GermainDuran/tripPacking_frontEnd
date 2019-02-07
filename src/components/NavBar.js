@@ -25,7 +25,7 @@ import { connect } from 'react-redux';
 
   handleClick2 = () => {
     // this.props.history.clear()
-    this.props.history.push(`/users/${this.props.user.id}/about`)
+    this.props.history.push(`/users/${this.props.userId}/about`)
   }
 // const NavBar = () => {
 
@@ -50,9 +50,9 @@ render() {
               <button className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
                Log Out
               </button>
-              {this.props.loggedIn ?   <button onClick={this.handleClick} className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
+             <button onClick={this.handleClick} className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
                   Trips
-                </button>: null}
+                </button>
                 <button onClick={this.handleClick2} className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
                   About
                 </button>
