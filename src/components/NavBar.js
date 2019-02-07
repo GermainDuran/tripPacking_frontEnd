@@ -23,6 +23,10 @@ import { connect } from 'react-redux';
     this.props.history.push(`/users/${this.props.userId}/trips`)
   }
 
+  handleClick2 = () => {
+    // this.props.history.clear()
+    this.props.history.push(`/users/${this.props.user.id}/about`)
+  }
 // const NavBar = () => {
 
 

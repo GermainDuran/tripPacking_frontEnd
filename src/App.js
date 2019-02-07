@@ -23,6 +23,7 @@ const App = props => {
           <Route exact path = "/users/:userId/trips" render={() => <TripContainer />} />
           <Route exact path="/users/:userId/trips/:tripId/suitcases" render={() => <SuitcaseContainer />} />
           <Route exact path="/users/:userId/trips/:tripId/suitcases/:suitcaseId/belongings" render={() => <BelongingsContainer />} />
+          <Route exact path = "/users/:userId/about" render={() => <AboutContainer />} />
         </Switch>
       </div>
     </Fragment>
