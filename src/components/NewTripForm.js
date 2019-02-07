@@ -14,6 +14,9 @@ import { editTrip } from '../actions/tripActions';
        //currentUserid: 9
      }
 
+
+
+
    handleChange = event => {
     //  console.log("Lanzando handle change",event.target.value) //aqui cuando comienzo a escribir en la forma veo el mensaje en la consola
       this.setState({
@@ -43,16 +46,7 @@ import { editTrip } from '../actions/tripActions';
     }
     }
 
-    componentDidUpdate(prevProps) {
-  // Typical usage (don't forget to compare props):
-    if (this.props.selectedTrip !== prevProps.selectedTrip) {
-      this.setState({
-        tripName: this.props.selectedTrip.name,
-        tripDate: this.props.selectedTrip.date,
-        editing: !this.state.editing
-      })
-    }
-  }
+
   render() {
      return (
        <Fragment>
@@ -74,9 +68,10 @@ import { editTrip } from '../actions/tripActions';
 }
 
 function mapStateToProps(state) {
-//  console.log("state in NewTripForm", state);
+ console.log("state in NewTripForm", state);
   return {
-    userId: state.user.user_id,
+
+    userId: state.user.id,
     selectedTrip: state.selectedTrip
   }
 }

@@ -1,12 +1,14 @@
 export function getTripBelongings(userId, tripId) {
   return(dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases`)
+    fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases`, {
+      method: 'GET',
+      headers: { Accept: 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` },
+    })
       .then(r => r.json())
       .then(belongings => {
-        let nestedArrayOfItems = belongings.map(function(suitcase) {return suitcase.belongings})
-        let arrayOfItems = [].concat.apply([], nestedArrayOfItems)
-        // debugger
-        return dispatch({type: 'GET_TRIP_BELONGINGS', payload: arrayOfItems })
+        let nestedArrayOfBelongings = belongings.map(function(suitcase) {return suitcase.belongings})
+        let arrayOfBelongings = [].concat.apply([], nestedArrayOfBelongings)
+        return dispatch({type: 'GET_TRIP_BELONGINGS', payload: arrayOfBelongings })
       })
   }
 }
@@ -14,10 +16,12 @@ export function getTripBelongings(userId, tripId) {
 
 export function getSuitcaseBelongings(userId, tripId, suitcaseId) {
   return(dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases/${suitcaseId}/belongings`)
+    fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases/${suitcaseId}/belongings`, {
+      method: 'GET',
+      headers: { Accept: 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` },
+    })
     .then(r => r.json())
       .then(belongings => {
-        // debugger
           return dispatch({type: 'GET_SUITCASE_BELONGINGS', payload: belongings})
       })
   }
@@ -28,7 +32,7 @@ export function addBelonging(name, image, userId, tripId, suitcaseId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases/${suitcaseId}/belongings`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` },
       body: JSON.stringify({
         name: name,
         image: image
@@ -37,34 +41,33 @@ export function addBelonging(name, image, userId, tripId, suitcaseId) {
     .then(r => r.json())
     .then(newBelonging => {
       // debugger
+      console.log("yaya 1")
       return dispatch({ type: "ADD_BELONGING", payload: newBelonging })
     })
   }
 }
 
-// DELETE ITEM
 export function deleteBelonging(userId, tripId, suitcaseId, belongingId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases/${suitcaseId}/belongings/${belongingId}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {  Authorization: `Bearer ${localStorage.getItem('jwt')}` }
     })
     return dispatch({ type: 'DELETE_BELONGING', payload: belongingId })
   }
 }
 
- // SELECT ITEM TO EDIT
 // export function selectBelonging(belonging) {
 //   debugger
 //   return {
-//     type: 'SELECT_ITEM',
+//     type: 'SELECT_BELONGING',
 //     payload: item
 //   }
 // }
 
- // EDIT ITEM
 // export function editItem(name, image, userId, tripId, suitcaseId, itemId) {
 //   return(dispatch) => {
-//     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}/items/${itemId}`, {
+//     fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases/${tripId}/belongings/${belongingId}`, {
 //       method: 'PATCH',
 //       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
 //       body: JSON.stringify({
@@ -73,9 +76,9 @@ export function deleteBelonging(userId, tripId, suitcaseId, belongingId) {
 //       })
 //     })
 //     .then(r => r.json())
-//     .then(editedItem => {
+//     .then(editedBelonging => {
 //       debugger
-//       return dispatch({ type: "EDIT_ITEM", payload: editedItem })
+//       return dispatch({ type: "EDIT_BELONGING", payload: editedBelonging })
 //     })
 //   }
 // }

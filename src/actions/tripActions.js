@@ -2,7 +2,10 @@
 
 export function getTrips(id) {
    return(dispatch) => {
-     fetch(`http://localhost:3000/api/v1/users/${id}/trips`)
+     fetch(`http://localhost:3000/api/v1/users/${id}/trips`, {
+      method: 'GET',
+      headers: { Accept: 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` }
+    })
       .then(r => r.json())
       .then(trips => {
         // debugger
@@ -17,7 +20,10 @@ export function addTrip(name, date, userId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/trips`, {
       method: "POST",
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+         Authorization: `Bearer ${localStorage.getItem('jwt')}`
+       },
       body: JSON.stringify({
           name: name,
           date: date
@@ -38,7 +44,8 @@ export function addTrip(name, date, userId) {
 export function deleteTrip(userId, tripId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {  Authorization: `Bearer ${localStorage.getItem('jwt')}` }
     })
     return dispatch({type: 'DELETE_TRIP', payload: tripId})
       // .then(r => r.json())
@@ -67,7 +74,10 @@ export function editTrip(name, date, userId, tripId) {
   return(dispatch) => {
     	fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}`, {
       method: 'PATCH',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      headers: {
+          'Content-Type': 'application/json', Accept: 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('jwt')}`
+      },
       body: JSON.stringify({
         name: name,
         date: date

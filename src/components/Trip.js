@@ -54,9 +54,9 @@ import { withRouter } from 'react-router-dom'
     handleClickToSeeSuitcases = () => {
        // this.props.selectTrip(this.props.trip)
        // this.props.history.push('/suitcases')
-      const { id } = this.props.trip
+      const { id, user_id } = this.props.trip
       //this.props.selectTrip(this.props.trip)
-      this.props.history.push(`trips/${id}/suitcases`)
+      this.props.history.push(`users/${user_id}/trips/${id}/suitcases`)
 
      }
 
@@ -73,6 +73,7 @@ import { withRouter } from 'react-router-dom'
             {/*<p>{this.props.trip.date}</p>*/}
             <h5>{this.reformatDate(this.state.date)}</h5>
           </div>
+
         <div className="see-boxes-btn">
           <button onClick={this.handleClickToSeeSuitcases} className="btn waves-effect waves-light">
                  Suitcases

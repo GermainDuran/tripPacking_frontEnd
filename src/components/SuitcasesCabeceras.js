@@ -11,7 +11,13 @@ import { withRouter } from 'react-router-dom'
   componentDidMount() {
       const { userId } = this.props.match.params
 
-       fetch(`http://localhost:3000/api/v1/users/${userId}/trips`)
+       fetch(`http://localhost:3000/api/v1/users/${userId}/trips`,{
+          method: "GET",
+          headers: {
+        'Content-Type': 'application/json',
+         Authorization: `Bearer ${localStorage.getItem('jwt')}`
+     },
+    })
       .then(r => r.json())
       .then(trips => {
         let tripIdInt = parseInt(this.props.match.params.tripId)

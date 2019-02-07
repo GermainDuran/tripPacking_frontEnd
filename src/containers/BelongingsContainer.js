@@ -17,7 +17,8 @@ class BelongingsContainer extends React.Component {
     fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases`, {
       method: "GET",
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+         Authorization: `Bearer ${localStorage.getItem('jwt')}`
      }
     })
       .then(r => r.json())
