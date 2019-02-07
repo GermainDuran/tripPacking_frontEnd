@@ -7,6 +7,7 @@ import NavBar from './components/NavBar'
 import { Route, Switch} from 'react-router-dom'
 import SuitcaseContainer from './containers/SuitcaseContainer'
 import BelongingsContainer from './containers/BelongingsContainer'
+import AboutContainer from './containers/AboutContainer'
 //import LoginForm from './components/LoginForm'
 
 //class App extends Component {
