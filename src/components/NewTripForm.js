@@ -14,6 +14,15 @@ import { editTrip } from '../actions/tripActions';
        //currentUserid: 9
      }
 
+     componentDidUpdate(prevProps) {
+       if (this.props.selectedTrip !== prevProps.selectedTrip) {
+         this.setState({
+           tripName: this.props.selectedTrip.name,
+           tripDate: this.props.selectedTrip.date,
+           editing: !this.state.editing
+         }, () => console.log("%c componentDidUpdate", 'color: red', this.state))
+       }
+     }
 
 
 
@@ -71,7 +80,7 @@ function mapStateToProps(state) {
  console.log("state in NewTripForm", state);
   return {
 
-    userId: state.user.id,
+    userId: state.user.user_id,
     selectedTrip: state.selectedTrip
   }
 }

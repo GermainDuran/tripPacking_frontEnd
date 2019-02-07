@@ -33,7 +33,7 @@ class LoginForm extends React.Component {
     // console.log("LoginForm", this.props.error);
     return this.props.loggedIn ? (
     /*  <Redirect to={"/users/" + this.props.user.user.id + "/trips"}/>*/
-          <Redirect to={"/users/" + this.props.user.user.id + "/moves"} />
+          <Redirect to={"/users/" + this.props.user.user.id + "/trips"} />
       ) : (
       <Fragment>
         <div style={{marginTop: '10%'}} className="row">

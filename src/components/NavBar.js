@@ -3,18 +3,19 @@ import React from 'react';
 //import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
+import { logoutUser } from '../actions/userActions'
 
  class NavBar extends React.Component {
 
-   state = {
-     userId: null
-   }
-
-   componentDidMount() {
-     this.setState({
-       userId: this.props.userId
-     })
-   }
+   // state = {
+   //   userId: null
+   // }
+   //
+   // componentDidMount() {
+   //   this.setState({
+   //     userId: this.props.userId
+   //   })
+   // }
 
 
   // console.log("NAVBAR",props);
@@ -28,8 +29,11 @@ import { connect } from 'react-redux';
     this.props.history.push(`/users/${this.props.user.id}/about`)
   }
 
-// const NavBar = () => {
-
+  handleLogout = () => {
+    this.props.logoutUser()
+    localStorage.clear()
+    this.props.history.push("/login")
+  }
 
 render() {
 
@@ -48,12 +52,15 @@ render() {
         </span>
           <ul className="left hide-on-med-and-down">
             <li>
-            <button className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
+            { !this.props.loggedIn ? null : <button onClick={this.handleLogout} className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
              Log Out
-            </button>
-            {this.props.loggedIn ?   <button onClick={this.handleClick} className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
+            </button>}
+
+            {this.props.loggedIn ?  <button onClick={this.handleClick} className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
                 Trips
               </button>: null}
+
+
               <button onClick={this.handleClick2} className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
                 About
               </button>
@@ -72,12 +79,19 @@ render() {
 const mapStateToProps = state => {
 
    return {
-    userId: state.user.user_id,
+    userId: state.user.user,
     loggedIn: state.user.loggedIn
   }
 }
 
-export default withRouter(connect(mapStateToProps)(NavBar));
+const mapDispatchToProps = dispatch => {
+  return {
+    logoutUser: () => dispatch(logoutUser())
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));
+// export default withRouter(connect(mapStateToProps)(NavBar));
 
 //export default withRouter(NavBar);
  // export default NavBar

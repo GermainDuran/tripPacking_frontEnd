@@ -3,7 +3,7 @@
  const initialState = {
   // username: '',
 //  user_id: 1,
-  user: null,
+  user_id: 1,
   loggedIn: false,
   authenticatingUser: false,
   failedLogin: false,
@@ -26,7 +26,11 @@
       error: action.payload,
       authenticatingUser: false
     }
-     default:
+
+    case 'LOGOUT_USER':
+      return initialState
+
+    default:
       return state;
 
    }

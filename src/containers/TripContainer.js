@@ -42,6 +42,6 @@ const TripContainer = (props)=> {
 //      getTrips: () => dispatch(getTrips())
 //   }
 // }
-export default withAuth(withRouter(TripContainer));
+export default withRouter(TripContainer);
 // export default withRouter(TripContainer);
 //export default TripContainer;

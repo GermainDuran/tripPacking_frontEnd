@@ -9,6 +9,7 @@ import SuitcaseContainer from './containers/SuitcaseContainer'
 import BelongingsContainer from './containers/BelongingsContainer'
 import AboutContainer from './containers/AboutContainer'
 import LoginForm from './components/LoginForm'
+import SignUp from './components/SignUp'
 
 //class App extends Component {
 
@@ -22,6 +23,7 @@ const App = props => {
         <NavBar />
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/users/:userId/trips" />}/>
+          <Route exact path="/signup" component={SignUp} />
           <Route exact path="/login" component={LoginForm} />
           <Route exact path = "/users/:userId/trips" render={() => <TripContainer />} />
           <Route exact path="/users/:userId/trips/:tripId/suitcases" render={() => <SuitcaseContainer />} />

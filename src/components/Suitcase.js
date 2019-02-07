@@ -9,17 +9,17 @@ import { deleteSuitcase, selectSuitcase } from '../actions/suitcaseActions'
    constructor(props) {
        super(props)
 
-        const { name, category} = this.props.suitcase // destructuring
+        const { name, category, idx} = this.props.suitcase // destructuring
 
         this.state = {
          name: name,
          category: category,
-        // idx: idx
+         idx: idx
        }
      }
 
       static getDerivedStateFromProps(props, state) {
-       if (props.suitcase.name !== state.name || props.suitcase.category !== state.category ) {
+       if (props.suitcase.name !== state.name || props.suitcase.category !== state.category || props.suitcase.idx !== state.idx) {
 
          return ({
            name: props.suitcase.name,
