@@ -3,7 +3,7 @@ import React from 'react';
 //import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { logoutUser } from '../actions/userActions'
+//import { logoutUser } from '../actions/userActions'
 
  class NavBar extends React.Component {
 
@@ -29,11 +29,11 @@ import { logoutUser } from '../actions/userActions'
     this.props.history.push(`/users/${this.props.user.id}/about`)
   }
 
-  handleLogout = () => {
-    this.props.logoutUser()
-    localStorage.clear()
-    this.props.history.push("/login")
-  }
+  // handleLogout = () => {
+  //   this.props.logoutUser()
+  //   localStorage.clear()
+  //   this.props.history.push("/login")
+  // }
 
 render() {
 
@@ -79,18 +79,18 @@ render() {
 const mapStateToProps = state => {
 
    return {
-    userId: state.user.user,
+    user: state.user.user,
     loggedIn: state.user.loggedIn
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    logoutUser: () => dispatch(logoutUser())
-  }
-}
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     logoutUser: () => dispatch(logoutUser())
+//   }
+// }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));
+export default withRouter(connect(mapStateToProps, null)(NavBar));
 // export default withRouter(connect(mapStateToProps)(NavBar));
 
 //export default withRouter(NavBar);

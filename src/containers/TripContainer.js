@@ -7,18 +7,7 @@ import withAuth from '../HOCs/withAuth'
 const TripContainer = (props)=> {
 
 
-  // componentDidMount() {
-  //   this.props.getTrips()
-  //   // fetch(tripsIndex)
-  //   // .then(response => response.json())
-  //   // .then(trips => {
-  //   //   console.log("Fetched Moves:",trips);
-  //   // })
-  // }
 
-  // render() {
-    //console.log("TripsContainer props:",this.props.getTrips);
-     //console.log("TripContainer props:", this.props);
     return (
       <div className="container">
        <h2 className="card-panel white black-text cont-title">My Trips</h2>
@@ -42,6 +31,5 @@ const TripContainer = (props)=> {
 //      getTrips: () => dispatch(getTrips())
 //   }
 // }
-export default withRouter(TripContainer);
-// export default withRouter(TripContainer);
+export default withAuth(withRouter(TripContainer));
 //export default TripContainer;

@@ -2,8 +2,8 @@
 
  const initialState = {
   // username: '',
-//  user_id: 1,
-  user_id: 1,
+//  user_id: 1, // debo inicializarlo ppara que las rutas puedan funcionar pero si se va longin no deberia
+  user: null,
   loggedIn: false,
   authenticatingUser: false,
   failedLogin: false,
