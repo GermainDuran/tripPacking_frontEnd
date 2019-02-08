@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux'
 import { withRouter, Redirect } from 'react-router'   // Redirect later
 import { loginUser } from '../actions/userActions'
+import { Link } from 'react-router-dom'
 
 class LoginForm extends React.Component {
 
@@ -32,7 +33,7 @@ class LoginForm extends React.Component {
     console.log("LoginFooooooorm:", this.props);
     return this.props.loggedIn ? (
     /*  <Redirect to={"/users/" + this.props.user.user.id + "/trips"}/>*/
-          <Redirect to={"/users/"+this.props.user.id+"/trips"} />
+          <Redirect to={"/users/"+this.props.user.user.id+"/trips"} />
       ) : (
       <Fragment>
         <div style={{marginTop: '10%'}} className="row">
@@ -43,7 +44,7 @@ class LoginForm extends React.Component {
                 <h3>Login Form</h3>
               </div>
               <div className="card-content">
-              { !this.props.failedLogin ? null : this.props.error }
+               { !this.props.failedLogin ? null : this.props.error }
                 <div className="form-field">
                   <input onChange={this.handleChange} type='text' name="username" placeholder="Username" value={this.state.username} required autoComplete="off" />
                 </div><br />
@@ -65,7 +66,7 @@ class LoginForm extends React.Component {
         </div>
 
 
-
+            First time here? <Link to="/signup">Sign Up</Link>
 
 
       </Fragment>

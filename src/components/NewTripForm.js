@@ -35,7 +35,7 @@ import { editTrip } from '../actions/tripActions';
 
     handleSubmit = (event) => {
     event.preventDefault();
-    //console.log("triggered submit");
+    console.log("triggered submit VENEZUELA",this.props);
     if (this.state.editing === false) { // CREATE MODE
       this.props.addTrip(this.state.tripName, this.state.tripDate, this.props.userId);
 
@@ -80,7 +80,7 @@ function mapStateToProps(state) {
  console.log("state in NewTripForm", state);
   return {
 
-    userId: state.user.user_id,
+    userId: state.user.user.id,
     selectedTrip: state.selectedTrip
   }
 }

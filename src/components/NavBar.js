@@ -3,13 +3,13 @@ import React from 'react';
 //import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
-//import { logoutUser } from '../actions/userActions'
+import { logoutUser } from '../actions/userActions'
 
  class NavBar extends React.Component {
 
-   // state = {
-   //   userId: null
-   // }
+state = {
+  aboutClicked: false
+}
    //
    // componentDidMount() {
    //   this.setState({
@@ -26,15 +26,29 @@ import { connect } from 'react-redux';
 
   handleClick2 = () => {
     // this.props.history.clear()
-    this.props.history.push(`/users/${this.props.user.id}/about`)
+  if (!this.props.loggedIn) {
+    this.setState( { aboutClicked: true })
+    this.props.history.push(`/about`)
+  } else {
+    this.props.history.push(`/about`)
   }
 
-  // handleLogout = () => {
-  //   this.props.logoutUser()
-  //   localStorage.clear()
-  //   this.props.history.push("/login")
-  // }
+  }
 
+  handleLogout = () => {
+    this.setState( { aboutClicked: false })
+
+    this.props.logoutUser()
+    localStorage.clear()
+    this.props.history.push("/")
+  }
+
+  handleClick3 = () => {
+    // this.props.history.clear()
+    this.setState( { aboutClicked: false })
+
+    this.props.history.push(`/`)
+  }
 render() {
 
     // console.log(this.props);
@@ -48,7 +62,7 @@ render() {
          <img id="logo" src="" alt="Packing Pal Logo"/>
         </span> */}
         <span className="brand-logo" style={{color: 'black',fontFamily: 'Hammersmith One', fontSize: '40px'}}>
-          TripPacking by:Germain <img alt="" width="70" heigth="70" src="https://www.bing.com/th?id=OIP.G87VWN9dkAdYDj93eo5_5gHaGX&w=218&h=184&c=7&o=5&pid=1.7"/>
+          TripPacking by:Arturo <img alt="" width="70" heigth="70" src="https://www.bing.com/th?id=OIP.G87VWN9dkAdYDj93eo5_5gHaGX&w=218&h=184&c=7&o=5&pid=1.7"/>
         </span>
           <ul className="left hide-on-med-and-down">
             <li>
@@ -64,6 +78,10 @@ render() {
               <button onClick={this.handleClick2} className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
                 About
               </button>
+          {this.state.aboutClicked ?   <button onClick={this.handleClick3} className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
+                Log in
+              </button> :null}
+
             </li>
           </ul>
           <div style={{color: 'black'}}>
@@ -84,13 +102,13 @@ const mapStateToProps = state => {
   }
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     logoutUser: () => dispatch(logoutUser())
-//   }
-// }
+const mapDispatchToProps = dispatch => {
+  return {
+    logoutUser: () => dispatch(logoutUser())
+  }
+}
 
-export default withRouter(connect(mapStateToProps, null)(NavBar));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));
 // export default withRouter(connect(mapStateToProps)(NavBar));
 
 //export default withRouter(NavBar);

@@ -9,12 +9,15 @@ import SuitcaseContainer from './containers/SuitcaseContainer'
 import BelongingsContainer from './containers/BelongingsContainer'
 import AboutContainer from './containers/AboutContainer'
 import LoginForm from './components/LoginForm'
+import SignUp from './components/SignUp'
 
 //class App extends Component {
 
 const App = props => {
 
   console.log("%c APP PROPS", 'color: red', props);
+  // <Route exact path="/" component={LoginForm} />
+  //<Route exact path="/" render={() => <Redirect to="/users/:userId/trips" />} />
 
     return (
     <Fragment>
@@ -22,12 +25,11 @@ const App = props => {
         <NavBar />
         <Switch>
           <Route exact path="/" component={LoginForm} />
-
-          <Route exact path="/login" component={LoginForm} />
+          <Route exact path="/signup" component={SignUp} />
           <Route exact path = "/users/:userId/trips" render={() => <TripContainer />} />
           <Route exact path="/users/:userId/trips/:tripId/suitcases" render={() => <SuitcaseContainer />} />
           <Route exact path="/users/:userId/trips/:tripId/suitcases/:suitcaseId/belongings" render={() => <BelongingsContainer />} />
-          <Route exact path = "/users/:userId/about" render={() => <AboutContainer />} />
+          <Route exact path = "/about" render={() => <AboutContainer />} />
 
         </Switch>
       </div>
