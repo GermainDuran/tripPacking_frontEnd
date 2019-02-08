@@ -12,6 +12,12 @@
   /* background-position: 100%; */
 }
 
+.arturo {
+  /* background-image: url("http://www.robertstravel.com/wp-content/uploads/2017/12/GetImage-1-350x350.jpeg"); */
+  /* background-size: 120%; */
+  /* background-repeat: no-repeat; */
+  opacity: 1
+}
 .item-image {
   display: block;
   max-width:400px;

@@ -27,6 +27,13 @@ import { connect } from 'react-redux';
     // this.props.history.clear()
     this.props.history.push(`/users/${this.props.userId}/about`)
   }
+
+  handleClick3 = () => {
+    // this.props.history.clear()
+    this.props.history.push(`/login`)
+  }
+
+
 // const NavBar = () => {
 
 
@@ -43,11 +50,11 @@ render() {
            <img id="logo" src="" alt="Packing Pal Logo"/>
           </span> */}
           <span className="brand-logo" style={{color: 'black',fontFamily: 'Hammersmith One', fontSize: '40px'}}>
-            TripPacking by:Germain <img alt="" width="70" heigth="70" src="https://www.bing.com/th?id=OIP.G87VWN9dkAdYDj93eo5_5gHaGX&w=218&h=184&c=7&o=5&pid=1.7"/>
+            TripPacking by:Arturo <img alt="" width="70" heigth="70" src="https://www.bing.com/th?id=OIP.G87VWN9dkAdYDj93eo5_5gHaGX&w=218&h=184&c=7&o=5&pid=1.7"/>
           </span>
             <ul className="left hide-on-med-and-down">
               <li>
-              <button className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
+              <button onClick={this.handleClick3} className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
                Log Out
               </button>
              <button onClick={this.handleClick} className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
