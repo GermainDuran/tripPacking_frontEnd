@@ -31,7 +31,7 @@ class SignUp extends React.Component {
         <div style={{marginTop: '10%'}} className="row">
           <form onSubmit={this.handleSubmit} className="col s12 m4 offset-m4">
             <div className="card">
-              <div className="card-action deep-purple #ff3d00 deep-orange accent-3">
+              <div className="card-action deep-purple #26a69a teal lighten-1">
                 <h3>Sign Up</h3>
               </div>
               <div className="card-content">
@@ -44,7 +44,7 @@ class SignUp extends React.Component {
                 </div><br />
 
                 <div className="form-field">
-                  <button className="btn-large waves-effect waves-dark #ff3d00 deep-orange accent-3" type="submit" style={{width: '100%', fontFamily: 'Hammersmith One, sans-serif'}}>
+                  <button className="btn-large waves-effect waves-dark #4db6ac teal lighten-1" type="submit" style={{width: '100%', fontFamily: 'Hammersmith One, sans-serif'}}>
                       Create
                   </button>
                 </div>

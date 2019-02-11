@@ -49,6 +49,7 @@ state = {
 
     this.props.history.push(`/`)
   }
+  //https://www.bing.com/th?id=OIP.G87VWN9dkAdYDj93eo5_5gHaGX&w=218&h=184&c=7&o=5&pid=1.7
 render() {
 
     // console.log(this.props);
@@ -57,12 +58,12 @@ render() {
      <div className="navbar-fixed">
     <nav className="nav-wrapper #e8f5e9 green lighten-5">
       <div className="container">
+        <span className="brand-logo left" style={{color: 'black',fontFamily: 'Hammersmith One', fontSize: '40px'}}>
+          <img src="../images/TripPacking3.png" alt="" width="500" heigth="500"/>
 
-    {/*  <span className="center brand-logo" style={{marginTop: '0px'}}>
-         <img id="logo" src="" alt="Packing Pal Logo"/>
-        </span> */}
-        <span className="brand-logo" style={{color: 'black',fontFamily: 'Hammersmith One', fontSize: '40px'}}>
-          TripPacking by:Arturo <img alt="" width="70" heigth="70" src="https://www.bing.com/th?id=OIP.G87VWN9dkAdYDj93eo5_5gHaGX&w=218&h=184&c=7&o=5&pid=1.7"/>
+          <img alt="" width="88" heigth="100" src="https://cdn.dribbble.com/users/81653/screenshots/2013674/suitcase.gif"/>
+
+          <img alt="" width="65" heigth="65" src="https://www.bing.com/th?id=OIP.nP54SI0xKUwgFJGF_90NTQHaHa&w=209&h=210&c=7&o=5&pid=1.7"/>
         </span>
           <ul className="left hide-on-med-and-down">
             <li>
@@ -84,9 +85,6 @@ render() {
 
             </li>
           </ul>
-          <div style={{color: 'black'}}>
-
-        </div>
       </div>
    </nav>
    </div>
