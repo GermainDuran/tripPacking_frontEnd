@@ -8,12 +8,8 @@ import { Route, Switch } from 'react-router-dom'
 import SuitcaseContainer from './containers/SuitcaseContainer'
 import BelongingsContainer from './containers/BelongingsContainer'
 import AboutContainer from './containers/AboutContainer'
-<<<<<<< HEAD
-//import LoginForm from './components/LoginForm'
-=======
 import LoginForm from './components/LoginForm'
 import SignUp from './components/SignUp'
->>>>>>> backup2
 
 //class App extends Component {
 
@@ -33,12 +29,8 @@ const App = props => {
           <Route exact path = "/users/:userId/trips" render={() => <TripContainer />} />
           <Route exact path="/users/:userId/trips/:tripId/suitcases" render={() => <SuitcaseContainer />} />
           <Route exact path="/users/:userId/trips/:tripId/suitcases/:suitcaseId/belongings" render={() => <BelongingsContainer />} />
-<<<<<<< HEAD
-          <Route exact path = "/users/:userId/about" render={() => <AboutContainer />} />
-=======
           <Route exact path = "/about" render={() => <AboutContainer />} />
 
->>>>>>> backup2
         </Switch>
       </div>
     </Fragment>

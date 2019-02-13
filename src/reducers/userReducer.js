@@ -2,19 +2,11 @@
 
  const initialState = {
   // username: '',
-<<<<<<< HEAD
-  user_id: 1,
-  // user: null,
-  // loggedIn: false,
-  // authenticatingUser: false,
-  // failedLogin: false,
-=======
 //  user_id: 1, // debo inicializarlo ppara que las rutas puedan funcionar pero si se va longin no deberia
   user: null,
   loggedIn: false,
   authenticatingUser: false,
   failedLogin: false,
->>>>>>> backup2
 }
 
  const userReducer = (state = initialState, action) => {
@@ -36,7 +28,7 @@
     }
 
     case 'LOGOUT_USER':
-      return  initialState 
+      return  initialState
 
     default:
       return state;
