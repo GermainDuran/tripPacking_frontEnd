@@ -9,15 +9,14 @@ import { withRouter } from 'react-router-dom'
 class TripList extends React.Component {
 
   componentDidMount() {
-    //console.log("Venezuela",this.props.user.user_id)
-  //if (this.props.history.action === "POP") {
-    this.props.getTrips(this.props.user.user_id)
+    console.log("Venezuela 2:", this.props)
+    this.props.getTrips(this.props.user.id)
+
   //}
   }
 
   render() {
-      // console.log("MoveList PROPS FROM REDUX STORE", this.props.moves);
-      //<= returns array of move objects that we'll map over to create the list
+
       const mappedTrips = this.props.trips.map((trip) => {
         return <Trip trip={trip} key={trip.id} />
       })
@@ -38,7 +37,7 @@ class TripList extends React.Component {
   //console.log("props in triplist", state);
   return {
     trips: state.trips,
-    user: state.user
+    user: state.user.user
   }
 }
 

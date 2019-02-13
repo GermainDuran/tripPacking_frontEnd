@@ -28,9 +28,11 @@ import { withRouter } from 'react-router-dom'
     this.setState({
       [event.target.name]: event.target.value
     })
+    // console.log(this.state.name)
+    // console.log(this.state.image)
   }
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
    event.preventDefault()
 
     const { userId, tripId, suitcaseId } = this.props.match.params
@@ -69,6 +71,8 @@ import { withRouter } from 'react-router-dom'
               <button type="submit" className="btn waves-effect waves-light" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
               <i className="material-icons right">send</i>   add belonging
               </button>
+              <div>
+              </div>
             </div>
           </div>
         </form>

@@ -14,6 +14,18 @@ import { editTrip } from '../actions/tripActions';
        //currentUserid: 9
      }
 
+     componentDidUpdate(prevProps) {
+       if (this.props.selectedTrip !== prevProps.selectedTrip) {
+         this.setState({
+           tripName: this.props.selectedTrip.name,
+           tripDate: this.props.selectedTrip.date,
+           editing: !this.state.editing
+         }, () => console.log("%c componentDidUpdate", 'color: red', this.state))
+       }
+     }
+
+
+
    handleChange = event => {
     //  console.log("Lanzando handle change",event.target.value) //aqui cuando comienzo a escribir en la forma veo el mensaje en la consola
       this.setState({
@@ -23,7 +35,7 @@ import { editTrip } from '../actions/tripActions';
 
     handleSubmit = (event) => {
     event.preventDefault();
-    //console.log("triggered submit");
+    console.log("triggered submit VENEZUELA",this.props);
     if (this.state.editing === false) { // CREATE MODE
       this.props.addTrip(this.state.tripName, this.state.tripDate, this.props.userId);
 
@@ -43,16 +55,7 @@ import { editTrip } from '../actions/tripActions';
     }
     }
 
-    componentDidUpdate(prevProps) {
-  // Typical usage (don't forget to compare props):
-    if (this.props.selectedTrip !== prevProps.selectedTrip) {
-      this.setState({
-        tripName: this.props.selectedTrip.name,
-        tripDate: this.props.selectedTrip.date,
-        editing: !this.state.editing
-      })
-    }
-  }
+
   render() {
      return (
        <Fragment>
@@ -74,9 +77,10 @@ import { editTrip } from '../actions/tripActions';
 }
 
 function mapStateToProps(state) {
-//  console.log("state in NewTripForm", state);
+ console.log("state in NewTripForm", state);
   return {
-    userId: state.user.user_id,
+
+    userId: state.user.user.id,
     selectedTrip: state.selectedTrip
   }
 }

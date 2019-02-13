@@ -70,7 +70,7 @@ class SuitcaseContainer extends React.Component {
         <NewSuitcaseForm />
         <BelongingSearchBar  doubleFilter={this.doubleFilter}  handleSearch={this.handleSearch} searchTerm={this.state.searchTerm} />
         <SuitcaseList  suitcases={suitcases}/>
-        <BelongingsSideBar belongings={belongings} searchTerm={this.state.searchTerm}  props={this.props}/>
+        <BelongingsSideBar belongings={belongings} searchTerm={this.state.searchTerm}  />
 
 
       </div>

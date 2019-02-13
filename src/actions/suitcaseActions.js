@@ -1,6 +1,9 @@
 export function getSuitcases(userId, tripId) {
   return(dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases`)
+    fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases`, {
+      method: 'GET',
+      headers: { Accept: 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` }
+    })
       .then(r => r.json())
       .then(suitcases => {
         //console.log("Venezuela Bonita:",suitcases)
@@ -14,7 +17,7 @@ export function addSuitcase(name, category, userId, tripId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` },
       body: JSON.stringify({
         name: name,
         category: category
@@ -30,7 +33,8 @@ export function addSuitcase(name, category, userId, tripId) {
 export function deleteSuitcase(userId, tripId, suitcaseId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases/${suitcaseId}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {  Authorization: `Bearer ${localStorage.getItem('jwt')}` }
     })
       return dispatch({type: 'DELETE_SUITCASE', payload: suitcaseId})
   }
@@ -53,7 +57,7 @@ export function editSuitcase(name, category, userId, tripId, suitcaseId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/trips/${tripId}/suitcases/${suitcaseId}`, {
       method: 'PATCH',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` },
       body: JSON.stringify({
         name: name,
         category: category
