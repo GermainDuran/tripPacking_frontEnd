@@ -1,4 +1,3 @@
-// ONCE I HAVE LOG IN WILL NOT HARD CODE USERID
 
  const initialState = {
   // username: '',

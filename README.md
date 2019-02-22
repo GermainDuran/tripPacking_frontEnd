@@ -1,4 +1,5 @@
 Welcome to TriPacking
+======================
 
 TripPacking is an application that allows users to organize and create trips with suitcases to be able to track all the belongings taken to a certain trip in an orderly and modern way.
 
