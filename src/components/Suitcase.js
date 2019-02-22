@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
-// import { deleteSuitcase, selectSuitcase, prefillForm } from '../actions/suitcaseActions'
 import { deleteSuitcase, selectSuitcase } from '../actions/suitcaseActions'
 
  class Suitcase extends React.Component {

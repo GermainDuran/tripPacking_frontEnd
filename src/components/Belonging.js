@@ -4,35 +4,11 @@ import { deleteBelonging } from '../actions/belongingActions'
 import { connect } from 'react-redux';
 
  class Belonging extends React.Component {
-   // constructor(props) {
-   //     super(props)
-   //
-   //      const { name, image} = this.props.belonging // destructuring
-   //
-   //      this.state = {
-   //       name: name,
-   //       image: image,
-   //      // idx: idx
-   //     }
-   //   }
+
    handleDelete = () => {
       const { userId, tripId, suitcaseId } = this.props.match.params
       this.props.deleteBelonging(userId, tripId, suitcaseId, this.props.belonging.id)
     }
-
-    // handleClickToEdit = () => {
-    //   this.props.selectItem(this.props.item)
-    // }
-   //  static getDerivedStateFromProps(props, state) {
-   //   if (props.belonging.name !== state.name || props.belonging.image !== state.image ) {
-   //
-   //     return ({
-   //       name: props.belonging.name,
-   //       image: props.belonging.image,
-   //     })
-   //   }
-   //   return null;
-   // }
 
 
   render() {
@@ -68,9 +44,8 @@ import { connect } from 'react-redux';
 const mapDispatchToProps = dispatch => {
   return {
     deleteBelonging: (userId, tripId, suitcaseId, belongingId) => dispatch(deleteBelonging(userId, tripId, suitcaseId, belongingId)),
-    // selectItem: (item) => dispatch(selectItem(item))
+
   }
 }
 
 export default withRouter(connect(null, mapDispatchToProps)(Belonging))
- // export default Belonging

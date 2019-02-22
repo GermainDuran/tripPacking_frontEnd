@@ -1,10 +1,8 @@
 import React from 'react';
 
-
- //class BelongingSearchBar extends React.Component {
 const BelongingSearchBar = props => {
 
-//render() {
+
     return (
     <div className="row col s7">
       <div className="input-field col s6" >

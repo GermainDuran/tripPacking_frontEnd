@@ -1,6 +1,5 @@
 import React from 'react';
 import SuitcaseList from '../components/SuitcaseList'
-//import SuitcasesSideBar from '../components/SuitcasesSideBar'
 import BelongingsSideBar from '../components/BelongingsSideBar'
 import SuitcasesCabeceras from '../components/SuitcasesCabeceras'
 import NewSuitcaseForm from '../components/NewSuitcaseForm'
@@ -49,9 +48,7 @@ class SuitcaseContainer extends React.Component {
  }
 
   render() {
-   //  const filteredBelongings = this.props.tripBelongings.filter((belonging) => {
-   //   return belonging.name.toLowerCase().includes(this.state.searchTerm)
-   // })
+
 
    let suitcases = this.state.searchTerm ? this.filterSuitcases() : this.props.suitcases
    const belongings = this.state.searchTerm ? this.filterBelongings() : this.props.tripBelongings
@@ -82,7 +79,7 @@ class SuitcaseContainer extends React.Component {
 
 const mapStateToProps = state => {
   // console.log("STATE",state);
-  //console.log(state)
+
   return {
     trips: state.trips,
     user: state.user,
@@ -100,4 +97,3 @@ const mapStateToProps = state => {
   }
 }
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SuitcaseContainer));
- //export default SuitcaseContainer;

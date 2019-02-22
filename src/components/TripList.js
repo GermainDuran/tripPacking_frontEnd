@@ -30,8 +30,7 @@ class TripList extends React.Component {
     }
   }  // END CLASS
 
-   // CONNECT TO REDUX STORE:
-  // Retrieve the data from within the Redux Store:
+
 
  const mapStateToProps = (state) => {
   //console.log("props in triplist", state);
@@ -48,4 +47,3 @@ class TripList extends React.Component {
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TripList));
-// export default connect(mapStateToProps, mapDispatchToProps)(TripList);

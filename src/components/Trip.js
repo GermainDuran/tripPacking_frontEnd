@@ -85,7 +85,7 @@ import { withRouter } from 'react-router-dom'
         <button onClick={this.handleDelete} className="delete-move-btn btn-floating btn-small waves-effect red accent-3">
          <span style={{fontFamily: 'Hammersmith One'}}>X</span>
        </button>
-       <button onClick={this.handleClickToEdit} className="edit-move-btn btn-floating btn-small waves-effect deep-orange accent-3">
+       <button onClick={this.handleClickToEdit} className="edit-move-btn btn-floating btn-small waves-effect red accent-3">
          <span style={{fontFamily: 'Hammersmith One'}}><i className="material-icons">edit</i></span>
        </button>
      </div>
@@ -111,5 +111,3 @@ function mapStateToProps(state) {
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Trip));
- // export default connect(mapStateToProps, mapDispatchToProps)(Trip);
- //export default Trip;

@@ -53,12 +53,4 @@ import { withRouter } from 'react-router-dom'
   }
 }
 
-//  const mapStateToProps = state => {
-//   return {
-//     tripName: state.selectedTrip.name,
-//   }
-// }
-
-
  export default withRouter(SuitcasesCabeceras);
- // export default connect(mapStateToProps)(SuitcasesCabeceras);

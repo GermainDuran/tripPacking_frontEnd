@@ -9,9 +9,6 @@ const initialState =
 
    switch (action.type) {
 
-     // case "SELECT_ITEM":
-    //   return {...state, ...action.payload}
-
      default:
       return state;
 

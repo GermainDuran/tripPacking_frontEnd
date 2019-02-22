@@ -85,8 +85,6 @@ function mapStateToProps(state) {
   }
 }
 
-
-// only going to need to map dispatch to props
 function mapDispatchToProps(dispatch) {
   return {
     addTrip: (name, date, userId) => dispatch(addTrip(name, date, userId)),
@@ -97,6 +95,3 @@ function mapDispatchToProps(dispatch) {
 
 
  export default connect(mapStateToProps, mapDispatchToProps)(NewTripForm);
-
- //export default connect(null, mapDispatchToProps)(NewTripForm);
- //export default NewTripForm;

@@ -17,19 +17,4 @@ const TripContainer = (props)=> {
     )
 }
 
-
- // Retrieve the data from within the Redux Store:
-// const mapStateToProps = (state) => {
-//   console.log("state", state);
-//   return {
-//     trips: state.trips
-//   }
-// }
-//
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//      getTrips: () => dispatch(getTrips())
-//   }
-// }
 export default withAuth(withRouter(TripContainer));
-//export default TripContainer;

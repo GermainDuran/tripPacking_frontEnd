@@ -1,6 +1,4 @@
 import React from 'react';
-// import { NavLink, Link } from 'react-router-dom'
-//import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { logoutUser } from '../actions/userActions'
@@ -10,15 +8,7 @@ import { logoutUser } from '../actions/userActions'
 state = {
   aboutClicked: false
 }
-   //
-   // componentDidMount() {
-   //   this.setState({
-   //     userId: this.props.userId
-   //   })
-   // }
 
-
-  // console.log("NAVBAR",props);
   handleClick = () => {
     // this.props.history.clear()
     this.props.history.push(`/users/${this.props.user.id}/trips`)
@@ -49,7 +39,7 @@ state = {
 
     this.props.history.push(`/`)
   }
-  //https://www.bing.com/th?id=OIP.G87VWN9dkAdYDj93eo5_5gHaGX&w=218&h=184&c=7&o=5&pid=1.7
+
 render() {
 
     // console.log(this.props);
@@ -107,7 +97,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));
-// export default withRouter(connect(mapStateToProps)(NavBar));
-
-//export default withRouter(NavBar);
- // export default NavBar
