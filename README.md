@@ -10,14 +10,20 @@ Developed a Rails API backend with endpoints for users, trips, belongings and su
 + Incorporated Cloudinary API to enable image uploads.
 
 Getting Started
+
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 Installing
+
 Before running the following, make sure that the server is up and running.
 
 npm install
+
 npm start
+
+
 Testing
+
 If you want to use the provided dummy data within the seed file, you can login with the following information:
 
 username: Arthur
@@ -27,7 +33,10 @@ Author:
 Germain Arturo Duran Torres
 
 
-Backend Repository
+Backend Repository:
+
 https://github.com/GermainDuran/TripPacking_backend
 
-Demo
+Demo:
+
+https://youtu.be/PvkMDsr_b5c
